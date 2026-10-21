@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/app_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,9 +8,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(title: const Text('Aca-ac_project')),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, '/login'),
-            child: const Text('Open Login'),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AppButton(
+                label: 'Open Login',
+                onPressed: () => Navigator.pushNamed(context, '/login'),
+              ),
+              const SizedBox(height: 12),
+              AppButton(
+                label: 'Submit a Report',
+                onPressed: () => Navigator.pushNamed(context, '/report'),
+              ),
+            ],
           ),
         ),
       );

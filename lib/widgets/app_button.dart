@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({
-    super.key,
-    required this.label,
-    required this.onPressed,
-  });
-
   final String label;
   final VoidCallback? onPressed;
 
+  const AppButton({super.key, required this.label, required this.onPressed});
+
   @override
-  Widget build(BuildContext context) => SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          onPressed: onPressed,
-          child: Text(label),
-        ),
-      );
+  Widget build(BuildContext context) =>
+      ElevatedButton(onPressed: onPressed, child: Text(label));
 }
